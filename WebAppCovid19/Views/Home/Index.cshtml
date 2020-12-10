@@ -1,0 +1,48 @@
+﻿@using WebAppCovid19.Entities;
+@{
+
+    ViewData["Title"] = "Home Page";
+
+    DatosActuales datos = ViewBag.Datos;
+    var paises = datos.Countries.OrderByDescending(c => c.TotalDeaths).ToList();
+}
+
+<head>
+    <link href="~/css/custom.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
+</head>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <table class="c-table c-table--highlight u-mb-small">
+        <thead class="c-table__head c-table__head--slim" style="background-color:#F9E4B7">
+            <tr>
+                <th class="c-table__cell c-table__cell--head">Pais</th>
+                <th class="c-table__cell c-table__cell--head">Casos</th>
+                <th class="c-table__cell c-table__cell--head">Muertes</th>
+                <th class="c-table__cell c-table__cell--head">Recuperados</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < paises.Count; i++)
+            {
+            <tr class="c-table__row">
+                <td class="c-table__cell align-content-center">
+                    @paises[i].CountryCountry<br />
+                </td>
+                <td class="c-table__cell align-content-center">
+                    @paises[i].TotalConfirmed<br />
+                </td>
+                <td class="c-table__cell align-content-center">
+                    @paises[i].TotalDeaths<br />
+                </td>
+                <td class="c-table__cell align-content-center">
+                    @paises[i].TotalRecovered<br />
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>
