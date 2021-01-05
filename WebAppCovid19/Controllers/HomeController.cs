@@ -24,8 +24,8 @@ namespace WebAppCovid19.Controllers
 
         public IActionResult Index()
         {
-            DatosActuales datos =new Datos<DatosActuales>().TraerDatos("summary").Result;
-            ViewBag.datos = datos;
+            //DatosActuales datos =new Datos<DatosActuales>().TraerDatos("summary").Result;
+            //ViewBag.datos = datos;
             return View();
         }
 

@@ -3,8 +3,8 @@
 
     ViewData["Title"] = "Home Page";
 
-    DatosActuales datos = ViewBag.Datos;
-    var paises = datos.Countries.OrderByDescending(c => c.TotalDeaths).ToList();
+    //DatosActuales datos = ViewBag.Datos;
+    //var paises = datos.Countries.OrderByDescending(c => c.TotalDeaths).ToList();
 }
 
 <head>
@@ -24,7 +24,7 @@
         </thead>
         <tbody>
 
-            @for (int i = 0; i < paises.Count; i++)
+            @*@for (int i = 0; i < paises.Count; i++)
             {
             <tr class="c-table__row">
                 <td class="c-table__cell align-content-center">
@@ -40,7 +40,7 @@
                     @paises[i].TotalRecovered<br />
                 </td>
             </tr>
-            }
+            }*@
 
         </tbody>
     </table>
